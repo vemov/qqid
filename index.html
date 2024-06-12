@@ -1,1 +1,76 @@
-hello
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QQ-ID</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 65%;
+            max-width: 500px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .qq-id {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #0078D4;
+        }
+        .share-button {
+            background-color: #0078D4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .share-button:hover {
+            background-color: #005a9e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>黑雨的QQ-ID</h1>
+        <p>紧跟源主不失联</p>
+        <div class="qq-id">QID: WindowsVPN</div>
+        <img src="0.jpg" alt="QR Code" width="100" height="100" style="border-radius: 50%;">
+        <br><br>
+        <button class="share-button" onclick="shareQQId()">分享QQ ID</button>
+    </div>
+
+    <script>
+        function shareQQId() {
+            const qqId = "12345678";
+            const shareText = `我的QQ ID是: ${qqId}`;
+            if (navigator.share) {
+                navigator.share({
+                    title: '分享QQ ID',
+                    text: shareText,
+                    url: window.location.href
+                }).then(() => {
+                    console.log('QQ ID shared successfully');
+                }).catch((error) => {
+                    console.error('Error sharing QQ ID', error);
+                });
+            } else {
+                prompt('复制QQ ID', qqId);
+            }
+        }
+    </script>
+</body>
+</html>
