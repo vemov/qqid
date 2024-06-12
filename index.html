@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QQ-ID</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -29,17 +32,25 @@
             color: #0078D4;
         }
         .share-button {
+            font-family: 'ZCOOL KuaiLe', sans-serif;
+            border-radius: 250px;
             background-color: #0078D4;
             color: white;
             border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
+            padding: 8px 15px;
+            font-size: 20px;
+            border-radius: 50px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
         .share-button:hover {
             background-color: #005a9e;
+        }
+        h1 {
+            color: #545454;
+        }
+        .p {
+           font-size: 16px;
         }
     </style>
 </head>
@@ -50,26 +61,14 @@
         <div class="qq-id">QID: WindowsVPN</div>
         <img src="0.jpg" alt="QR Code" width="100" height="100" style="border-radius: 50%;">
         <br><br>
-        <button class="share-button" onclick="shareQQId()">分享QQ ID</button>
+        <button class="share-button" onclick="openQQ()()">点击连接</button>
     </div>
 
     <script>
-        function shareQQId() {
-            const qqId = "12345678";
-            const shareText = `我的QQ ID是: ${qqId}`;
-            if (navigator.share) {
-                navigator.share({
-                    title: '分享QQ ID',
-                    text: shareText,
-                    url: window.location.href
-                }).then(() => {
-                    console.log('QQ ID shared successfully');
-                }).catch((error) => {
-                    console.error('Error sharing QQ ID', error);
-                });
-            } else {
-                prompt('复制QQ ID', qqId);
-            }
+         function openQQ() {
+            const qqId = "2935394493";
+            const url = `mqqwpa://im/chat?chat_type=wpa&uin=${qqId}&version=1&src_type=web&web_src=http:://example.com`;
+            window.location.href = url;
         }
     </script>
 </body>
