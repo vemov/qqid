@@ -14,12 +14,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             margin: 0;
         }
         .container {
             width: 65%;
             max-width: 500px;
+            margin-top: 50px;
+            margin-bottom: 50px;
             background-color: white;
             padding: 20px;
             border-radius: 8px;
@@ -33,6 +34,7 @@
             color: #0078D4;
         }
         .share-button {
+            margin-bottom: 15px;
             font-family: 'ZCOOL KuaiLe', sans-serif;
             border-radius: 250px;
             background-color: #0078D4;
@@ -61,20 +63,30 @@
 </head>
 <body>
     <div class="container">
-        <p class="text">黑雨的QQ-ID</p>
-        <p style="font-size: 20px;">紧跟源主不失联</p>
-        <div style="font-size: 20px;">QID: <span class="qq-id" id="qq-id">WindowsVPN</span></div>
+        <p class="text">黑雨的QQ-id们</p>
+        <p style="font-size: 20px;">在QQ中搜索Qid，紧跟源主不失联</p>
+        <div style="font-size: 20px;">QID-1：<span class="qq-id">WindowsVPN</span></div>
         <img src="0.jpg" alt="QR Code" width="100" height="100" style="border-radius: 50%; margin-top: 20px;">
         <br><br>
-        <button class="share-button" onclick="copyToClipboard()">复制ID</button>
-        <p style="font-size: 20px;">在QQ搜索该Qid</p>
+        <button class="share-button" onclick="copyToClipboard('WindowsVPN')">复制ID</button>
+        <div style="font-size: 20px;">QID-2：<span class="qq-id">VemoV904</span></div>
+        <img src="1.jpg" alt="QR Code" width="100" height="100" style="border-radius: 50%; margin-top: 20px;">
+        <br><br>
+        <button class="share-button" onclick="copyToClipboard('VemoV904')">复制ID</button>
+        <div style="font-size: 20px;">QID-3：<span class="qq-id">VemoV905</span></div>
+        <img src="2.jpg" alt="QR Code" width="100" height="100" style="border-radius: 50%; margin-top: 20px;">
+        <br><br>
+        <button class="share-button" onclick="copyToClipboard('VemoV905')">复制ID</button>
+        <div style="font-size: 20px;">QID-4：<span class="qq-id">VemoV906</span></div>
+        <img src="3.jpg" alt="QR Code" width="100" height="100" style="border-radius: 50%; margin-top: 20px;">
+        <br><br>
+        <button class="share-button" onclick="copyToClipboard('VemoV906')">复制ID</button>
     </div>
 
     <script>
-        function copyToClipboard() {
-            const qqId = document.getElementById('qq-id').innerText;
+        function copyToClipboard(qqId) {
             navigator.clipboard.writeText(qqId).then(() => {
-                alert('qid 已复制到剪贴板!');
+                alert('qid: ' + qqId + ' 已复制到剪贴板!');
             }).catch(err => {
                 console.error('复制失败: ', err);
             });
