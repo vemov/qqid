@@ -27,6 +27,7 @@
             text-align: center;
         }
         .qq-id {
+            font-family: 'ZCOOL KuaiLe', sans-serif;
             font-size: 24px;
             margin: 10px 0;
             color: #0078D4;
@@ -46,7 +47,9 @@
         .share-button:hover {
             background-color: #005a9e;
         }
-        h1 {
+        .text {
+            font-family: 'ZCOOL KuaiLe', sans-serif;
+            font-size: 40px;
             color: #545454;
         }
         .p {
@@ -56,17 +59,22 @@
 </head>
 <body>
     <div class="container">
-        <h1>黑雨的QQ-ID</h1>
+        <p class="text">黑雨的QQ-ID</p>
         <p>紧跟源主不失联</p>
-        <div class="qq-id">QID: WindowsVPN</div>
-        <img src="0.jpg" alt="QR Code" width="100" height="100" style="border-radius: 50%;">
+        <div style="font-size: 20px;">QID: <span class="qq-id" id="qq-id">WindowsVPN</span></div>
+        <img src="0.jpg" alt="QR Code" width="100" height="100" style="border-radius: 50%; margin-top: 20px;">
         <br><br>
-        <button class="share-button" onclick="openQQ()()">点击跳转</button>
+        <button class="share-button" onclick="copyToClipboard()">复制ID</button>
     </div>
 
     <script>
-         function openQQ() {
-            window.location.href = "mqqapi://card/show_pslcard?src_type=internal&source=sharecard&version=1&uin=2935394493";
+        function copyToClipboard() {
+            const qqId = document.getElementById('qq-id').innerText;
+            navigator.clipboard.writeText(qqId).then(() => {
+                alert('qid 已复制到剪贴板!');
+            }).catch(err => {
+                console.error('复制失败: ', err);
+            });
         }
     </script>
 </body>
