@@ -61,14 +61,12 @@
         <div class="qq-id">QID: WindowsVPN</div>
         <img src="0.jpg" alt="QR Code" width="100" height="100" style="border-radius: 50%;">
         <br><br>
-        <button class="share-button" onclick="openQQ()()">点击连接</button>
+        <button class="share-button" onclick="openQQ()()">点击跳转</button>
     </div>
 
     <script>
          function openQQ() {
-            const qqId = "2935394493";
-            const url = `mqqwpa://im/chat?chat_type=wpa&uin=${qqId}&version=1&src_type=web&web_src=http:://example.com`;
-            window.location.href = url;
+            window.location.href = "mqqapi://card/show_pslcard?src_type=internal&source=sharecard&version=1&uin=2935394493";
         }
     </script>
 </body>
