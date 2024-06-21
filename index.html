@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QQ-ID</title>
+    <title>QQ-id</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
@@ -30,10 +30,11 @@
         .qq-id {
             font-family: 'ZCOOL KuaiLe', sans-serif;
             font-size: 24px;
-            margin: 10px 0;
+
             color: #0078D4;
         }
         .share-button {
+            margin-top: 15px;
             margin-bottom: 15px;
             font-family: 'ZCOOL KuaiLe', sans-serif;
             border-radius: 250px;
@@ -63,30 +64,21 @@
 </head>
 <body>
     <div class="container">
-        <p class="text">黑雨的QQ-id们</p>
-        <p style="font-size: 20px;">在QQ中搜索Qid，紧跟源主不失联</p>
-        <div style="font-size: 20px;">QID-1：<span class="qq-id">WindowsVPN</span></div>
-        <img src="0.jpg" alt="QR Code" width="100" height="100" style="border-radius: 50%; margin-top: 20px;">
-        <br><br>
-        <button class="share-button" onclick="copyToClipboard('WindowsVPN')">复制ID</button>
-        <div style="font-size: 20px;">QID-2：<span class="qq-id">VemoV904</span></div>
-        <img src="1.jpg" alt="QR Code" width="100" height="100" style="border-radius: 50%; margin-top: 20px;">
-        <br><br>
-        <button class="share-button" onclick="copyToClipboard('VemoV904')">复制ID</button>
-        <div style="font-size: 20px;">QID-3：<span class="qq-id">VemoV905</span></div>
-        <img src="2.jpg" alt="QR Code" width="100" height="100" style="border-radius: 50%; margin-top: 20px;">
-        <br><br>
-        <button class="share-button" onclick="copyToClipboard('VemoV905')">复制ID</button>
-        <div style="font-size: 20px;">QID-4：<span class="qq-id">VemoV906</span></div>
-        <img src="3.jpg" alt="QR Code" width="100" height="100" style="border-radius: 50%; margin-top: 20px;">
-        <br><br>
-        <button class="share-button" onclick="copyToClipboard('VemoV906')">复制ID</button>
+        <p class="text">群聊簿</p>
+        <p style="font-size: 20px;">注意：本策划者不会在群聊中泄露真身，即不会回复任何的消息</p>
+        <p style="font-size: 20px;">进群者的群昵称请改成：FQ</p>
+        <p style="font-size: 20px;">若需要向策划者传递信息，请自行「广播式」发布</p>
+        <div style="font-size: 20px;">群号1：<span class="qq-id">823408225</span></div>
+        <button class="share-button" onclick="copyToClipboard('823408225')">复制群号</button>
+        <div style="font-size: 20px;">群号2：<span class="qq-id">423211372</span></div>
+        <button class="share-button" onclick="copyToClipboard('423211372')">复制群号</button>
+
     </div>
 
     <script>
         function copyToClipboard(qqId) {
             navigator.clipboard.writeText(qqId).then(() => {
-                alert('qid: ' + qqId + ' 已复制到剪贴板!');
+                alert('群号: ' + qqId + ' 已复制到剪贴板!');
             }).catch(err => {
                 console.error('复制失败: ', err);
             });
